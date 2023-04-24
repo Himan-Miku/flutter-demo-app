@@ -8,6 +8,7 @@ class LearnFlutterPage extends StatefulWidget {
 }
 
 class _LearnFlutterPageState extends State<LearnFlutterPage> {
+  bool isSwitch = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +46,13 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
               ),
             ),
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isSwitch ? Colors.green : Colors.blue,
+            ),
+            onPressed: () => {debugPrint('ElevatedButton Button clicked')},
+            child: const Text('ElevatedButton Button'),
+          ),
           OutlinedButton(
             onPressed: () => {debugPrint('Outlined Button clicked')},
             child: const Text('Outlined Button'),
@@ -53,18 +61,35 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             onPressed: () => {debugPrint('Text Button clicked')},
             child: const Text('Text Button'),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Icon(
-                Icons.local_fire_department,
-              ),
-              Text('Row Text Widget'),
-              Icon(
-                Icons.local_fire_department,
-              ),
-            ],
+          GestureDetector(
+            onTap: () => {
+              debugPrint('Hello There'),
+            },
+            // behavior: HitTestBehavior.opaque,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(
+                  Icons.local_fire_department,
+                  color: Colors.blue,
+                ),
+                Text('Row Text Widget'),
+                Icon(
+                  Icons.local_fire_department,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
           ),
+          Switch(
+            value: isSwitch,
+            activeColor: Colors.green,
+            onChanged: (bool newValue) {
+              setState(() {
+                isSwitch = newValue;
+              });
+            },
+          )
         ],
       ),
     );

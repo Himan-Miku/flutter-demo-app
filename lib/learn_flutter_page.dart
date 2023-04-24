@@ -21,6 +21,26 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
       ),
+      body: Column(
+        children: [
+          Image.asset('images/Nino.png'),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider(
+            color: Colors.blue,
+          ),
+          Container(
+            width: double.infinity,
+            color: Colors.lightBlue,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'This is inside a container',
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

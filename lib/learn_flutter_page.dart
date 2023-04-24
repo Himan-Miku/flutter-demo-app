@@ -29,16 +29,42 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           ),
           const Divider(
             color: Colors.blue,
+            thickness: 3,
+            indent: 50,
+            endIndent: 50,
           ),
           Container(
             width: double.infinity,
             color: Colors.lightBlue,
             padding: const EdgeInsets.all(10),
-            child: const Text(
-              'This is inside a container',
-              style: TextStyle(color: Colors.white),
+            margin: const EdgeInsets.only(top: 10.0, bottom: 20.0),
+            child: const Center(
+              child: Text(
+                'This is inside a container',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
-          )
+          ),
+          OutlinedButton(
+            onPressed: () => {debugPrint('Outlined Button clicked')},
+            child: const Text('Outlined Button'),
+          ),
+          TextButton(
+            onPressed: () => {debugPrint('Text Button clicked')},
+            child: const Text('Text Button'),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Icon(
+                Icons.local_fire_department,
+              ),
+              Text('Row Text Widget'),
+              Icon(
+                Icons.local_fire_department,
+              ),
+            ],
+          ),
         ],
       ),
     );

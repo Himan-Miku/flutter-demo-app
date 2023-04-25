@@ -9,6 +9,7 @@ class LearnFlutterPage extends StatefulWidget {
 
 class _LearnFlutterPageState extends State<LearnFlutterPage> {
   bool isSwitch = false;
+  bool? isCheckbox = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,6 +88,14 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             onChanged: (bool newValue) {
               setState(() {
                 isSwitch = newValue;
+              });
+            },
+          ),
+          Checkbox(
+            value: isCheckbox,
+            onChanged: (bool? newValue) {
+              setState(() {
+                isCheckbox = newValue;
               });
             },
           )

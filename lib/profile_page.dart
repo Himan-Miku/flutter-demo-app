@@ -11,6 +11,9 @@ class ProfilePage extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           title: Text('List Item ${(index + 1)}'),
+          leading: const Icon(Icons.person),
+          trailing: const Icon(Icons.select_all),
+          onTap: () => {debugPrint('List Item ${(index + 1)} selected!')},
         );
       },
       itemCount: listCount,
